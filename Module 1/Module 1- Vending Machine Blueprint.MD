@@ -6,9 +6,9 @@ Python is famous for stripping away punctuation. It doesn't use semicolons, and 
 figure out what code belongs inside the if/else statement.
 
 **Python**
-	# 1. Store the price
+# 1. Store the price
 
-soda_price = 1.50
+	soda_price = 1.50
 
 # 2 & 3. Ask for money and turn the answer into a decimal number
 
@@ -163,11 +163,11 @@ and catches whatever they typed.
 ## The If/Else Structure
 Look at the shape of the code across all five languages. They all follow a rigid logical fork in the road:
 
-[ Is the money >= the price? ]
-             /          \
-          YES            NO
-          /                \
-   "Enjoy your drink!"   "Inadequate funds."
+	[ Is the money >= the price? ]
+	             /          \
+	          YES            NO
+	          /                \
+	   "Enjoy your drink!"   "Inadequate funds."
    
    No matter how many curly brackets ({}), dollar signs ($), or end keywords the languages use, 
    the machine is doing the exact same logical evaluation. ---
