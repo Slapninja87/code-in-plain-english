@@ -7,14 +7,17 @@ figure out what code belongs inside the if/else statement.
 
 **Python**
 # 1. Store the price
+
 soda_price = 1.50
 
 # 2 & 3. Ask for money and turn the answer into a decimal number
+
 user_money = float(input("Enter your money: "))
 
 # 4. The Decision
 if user_money >= soda_price:
     print("Enjoy your drink!")
+
 else:
     print("Inadequate funds.")
 	
