@@ -15,12 +15,14 @@ soda_price = 1.50
 user_money = float(input("Enter your money: "))
 
 # 4. The Decision
-if user_money >= soda_price:
-    print("Enjoy your drink!")
+	if user_money >= soda_price:
+    	print("Enjoy your drink!")
 
-else:
-    print("Inadequate funds.")
+	else:
+    	print("Inadequate funds.")
 	
+
+
 
 2. **Java (The Organized Industrial Blueprint)**
 Java is very strict. You can't just create a variable; you have to tell Java exactly what type of data is going inside it
@@ -50,6 +52,8 @@ public class VendingMachine {
 }
 
 
+
+
 3. **C# (The Corporate Powerhouse)**
 Look closely at C# below. You will notice it looks almost exactly like Java. Microsoft built C# to compete with Java, 
 so they share the same strict rules, curly brackets, and semicolons.
@@ -75,6 +79,9 @@ class VendingMachine {
     }
 }
 
+
+
+
 4. **PHP (The Web's Old Reliable)**
 PHP was built specifically for the web. Because it's designed to live alongside HTML, all PHP code has to start 
 with a special tag <?php. Another unique rule of PHP is that every single variable name must start with a dollar sign ($).
@@ -96,6 +103,9 @@ if ($user_money >= $soda_price) {
 }
 ?>
 
+
+
+
 5. **Ruby (The Elegant Reader)**
 Ruby’s philosophy is to make coding beautiful and natural. Like Python, it drops semicolons and parentheses. 
 It also drops the word print or echo and just uses puts (short for "put string on the screen"). It closes its decisions 
@@ -115,6 +125,9 @@ if user_money >= soda_price
 else
   puts "Inadequate funds."
 end
+
+
+
 
 ## The "Plain English" Lesson for Beginners
 
