@@ -1,5 +1,25 @@
-# code-in-plain-english
-These focus on stripping away the jargon in coding and programming and making people feel welcome
+**Welcome to Code in Plain English for Beginners**
+If you have ever opened a GitHub repository, looked at a wall of code, and felt instantly overwhelmed,
+you are in the right place.
+The tech industry has a habit of making things sound much harder than they actually are.
+They use heavy jargon, complex syntax, and intense math terms that scare people away.
+This repository is built to prove one simple truth: If you can think through a daily routine, you can program a computer.
+
+**The Problem with Modern Coding (and AI)**
+Right now, a lot of people copy and paste prompts into AI tools to generate code.
+While AI is an incredible assistant, relying on it blindly is a trap. If you don't understand the underlying logic,
+you can't spot when the AI makes a mistake, and you can't build things entirely on your own.
+We aren't here to teach you how to memorize symbols or copy AI. We are here to teach you how a computer thinks.
+
+**How We Use "The Rosetta Stone" Blueprint**
+Instead of giving you a massive textbook for five different languages, this repository uses a Blueprint Approach.
+  1. We pick a simple, real-world scenario (like buying a soda, logging into an account, or setting an alarm).
+  2. We map out the logic in pure, plain English. No code, no brackets, no syntax. Just human thought.
+  3. We translate that exact same thought side-by-side into multiple languages—from friendly languages like Python to
+     heavy-duty languages like C++ or Java.
+By looking at them side-by-side, you will quickly notice that while the grammar and punctuation change, the human logic
+never changes. Once you learn the logic, picking up a new language is just like learning the local slang.
+
 
 **Web & Frontend Development**: These languages power the visual elements, styles, and interactive behaviors of modern websites.
 
