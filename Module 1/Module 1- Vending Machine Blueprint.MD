@@ -16,6 +16,7 @@ user_money = float(input("Enter your money: "))
 
 # 4. The Decision
 if user_money >= soda_price:
+
     print("Enjoy your drink!")
 
 else:
