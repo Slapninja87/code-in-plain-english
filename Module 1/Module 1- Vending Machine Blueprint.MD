@@ -113,18 +113,18 @@ with a clean end statemen
 
 **Ruby**
 # 1. Store the price
-soda_price = 1.50
+	soda_price = 1.50
 
 # 2 & 3. Ask for money and look at the answer
-print "Enter your money: "
-user_money = gets.to_f # "gets" catches the input, "to_f" turns it into a decimal float
+	print "Enter your money: "
+	user_money = gets.to_f # "gets" catches the input, "to_f" turns it into a decimal float
 
 # 4. The Decision
-if user_money >= soda_price
-  puts "Enjoy your drink!"
-else
-  puts "Inadequate funds."
-end
+	if user_money >= soda_price
+	  puts "Enjoy your drink!"
+	else
+	  puts "Inadequate funds."
+	end
 
 
 
