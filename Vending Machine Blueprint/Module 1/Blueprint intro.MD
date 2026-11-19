@@ -18,11 +18,11 @@ If you were talking to a human, you'd just say, "Check if they have enough money
 	o	IF the money they gave you is greater than or equal to $1.50, dispense the soda and say "Enjoy your drink!" 
 	o	ELSE (if the money is less than $1.50), keep the door locked and say "Inadequate funds." 
 
-[ Is the money >= $1.50? ]
-                 /          \
-              YES            NO
-              /                \
-   "Enjoy your drink!"   "Inadequate funds."
+			[ Is the money >= $1.50? ]
+			                 /          \
+			              YES            NO
+			              /                \
+			   "Enjoy your drink!"   "Inadequate funds."
 
 What's Next: Moving Into Web & Frontend Development
 Now that we have our Plain English blueprint locked down, we are ready to move into Web & Frontend Development. Instead of running once and shutting down right away, a web page has to draw the machine on a screen and wait for a user to interact with it.
