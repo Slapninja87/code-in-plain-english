@@ -1,179 +1,75 @@
-## Module 1: The Backend Translation
-Reminder of the Logic: We need to store a soda price ($1.50), get the user's money, and check if it's enough.
+01. Web & Frontend Development Lesson
 
-1. **Python (The Readable Speedster)**
-Python is famous for stripping away punctuation. It doesn't use semicolons, and it uses blank spaces (indentation) to 
-figure out what code belongs inside the if/else statement.
+What You Will Learn
+	•	The Plain English UI Blueprint: How HTML, CSS, and JavaScript/TypeScript team up on a web page. 
+	•	HTML & CSS basics (vending.html & style.css): Putting input boxes, buttons, and messages on screen and styling them. 
+	•	JavaScript event listeners (vending.js): Hooking onto element IDs and waiting for a button click to run the $1.50 check. 
+	•	TypeScript guardrails (vending.ts): Using type labels like : number to catch data-type mistakes early. 
 
-	**Python**
-	# 1. Store the price
-	
-		soda_price = 1.50
-	
-	# 2 & 3. Ask for money and turn the answer into a decimal number
-	
-		user_money = float(input("Enter your money: "))
-	
-	# 4. The Decision
-		if user_money >= soda_price:
-	    	print("Enjoy your drink!")
-	
-		else:
-	    	print("Inadequate funds.")
+1. The Plain English UI Blueprint
+
+On the frontend, the computer has to draw the vending machine on a screen and wait for a user to interact with it physically. 
+To build a website, three distinct layers must work together: 
+	1.	The Blueprint (HTML): "Put a box here. Put a heading inside it. Put a text input box below that, and a button at the very bottom." 
+	2.	The Style (CSS): "Make the box gray, put 20 pixels of space around the text, make the font clean, and color the button green." 
+	3.	The Brains (JavaScript/TypeScript): "Watch that button. When a user clicks it, grab the number they typed into the text input box, do the math, and change the message on the screen." 
+	2. The Core Web Languages (HTML & CSS)
+Unlike the backend, HTML and CSS work together to build what the user sees. 
+
+File: vending.html
+		<p>Enter your money:</p>
+		<input type="number" id="moneyInput" placeholder="0.00">
 		
-
-
-
-2. **Java (The Organized Industrial Blueprint)**
-Java is very strict. You can't just create a variable; you have to tell Java exactly what type of data is going inside it
-(we use double for decimal numbers). It also requires a lot of "setup code" just to get the program running.
-
-	**Java**
-		import java.util.Scanner;
+		<button id="dispenseBtn" class="btn-dispense">Insert & Buy</button>
 		
-		public class VendingMachine {
-		    public static void main(String[] args) {
-		        Scanner input = new Scanner(System.util.in);
-		        
-		        // 1. Store the price (Must declare it's a double)
-		        double soda_price = 1.50;
-		        
-		        // 2 & 3. Ask for money and read the decimal input
-		        System.out.print("Enter your money: ");
-		        double user_money = input.nextDouble();
-		        
-		        // 4. The Decision (Uses curly brackets to hold the logic)
-		        if (user_money >= soda_price) {
-		            System.out.println("Enjoy your drink!");
-		        } else {
-		            System.out.println("Inadequate funds.");
-		        }
-		    }
-		}
+		<h3 id="displayMessage"></h3>
 
+3. Interactive Logic (JavaScript & TypeScript)
 
+JavaScript (The Web's Muscle)
+JavaScript hooks directly into the HTML elements we just made using their "IDs" (like moneyInput and dispenseBtn) to read data and make choices. 
 
-
-3. **C# (The Corporate Powerhouse)**
-Look closely at C# below. You will notice it looks almost exactly like Java. Microsoft built C# to compete with Java, 
-so they share the same strict rules, curly brackets, and semicolons.
-
-	** C# **
-		using System;
+		// 1. Remember the price
+		const sodaPrice = 1.50;
 		
-		class VendingMachine {
-		    static void Main() {
-		        // 1. Store the price
-		        double soda_price = 1.50;
-		        
-		        // 2 & 3. Ask for money and convert the text answer into a decimal number
-		        Console.Write("Enter your money: ");
-		        double user_money = Convert.ToDouble(Console.ReadLine());
-		        
-		        // 4. The Decision
-		        if (user_money >= soda_price) {
-		            Console.WriteLine("Enjoy your drink!");
-		        } else {
-		            Console.WriteLine("Inadequate funds.");
-		        }
-		    }
-		}
+		// 2. Tell the computer to listen to the green button
+		document.getElementById("dispenseBtn").addEventListener("click", function() {
+		  // 3. Grab the number the user typed into the input box
+		  const userMoney = parseFloat(document.getElementById("moneyInput").value);
+		  const display = document.getElementById("displayMessage");
+		
+		  // 4. The exact same decision logic!
+		  if (userMoney >= sodaPrice) {
+		    display.innerText = "Enjoy your drink! 🎉";
+		    display.style.color = "green";
+		  } else {
+		    display.innerText = "Inadequate funds. ❌";
+		    display.style.color = "red";
+		  }
+		});
 
+TypeScript (JavaScript with Guardrails)
+Look at TypeScript below. It looks almost identical to JavaScript, but notice the extra tags like : number. Microsoft created TypeScript to prevent developers from accidentally putting text into a box meant for numbers, catching bugs before the website goes live. 
 
+		// 1. Store the price (Strictly locking it down as a number)
+		const sodaPrice: number = 1.50;
+		
+		document.getElementById("dispenseBtn")?.addEventListener("click", () => {
+		  // 2. We explicitly tell the machine we are pulling data from an Input box
+		  const inputElement = document.getElementById("moneyInput") as HTMLInputElement;
+		  const userMoney: number = parseFloat(inputElement.value);
+		  const display = document.getElementById("displayMessage") as HTMLElement;
+		
+		  // 3. The Decision
+		  if (userMoney >= sodaPrice) {
+		    display.innerText = "Enjoy your drink! 🎉";
+		  } else {
+		    display.innerText = "Inadequate funds. ❌";
+		  }
+		});
 
+4. The "Plain English" Lessons for Beginners
 
-4. **PHP (The Web's Old Reliable)**
-PHP was built specifically for the web. Because it's designed to live alongside HTML, all PHP code has to start 
-with a special tag <?php. Another unique rule of PHP is that every single variable name must start with a dollar sign ($).
-
-	** PHP **
-	<?php
-	// 1. Store the price (Notice the $ before the name)
-		$soda_price = 1.50;
-	
-	// 2 & 3. Ask for money and read what the user types in the terminal
-		echo "Enter your money: ";
-		$user_money = (float)readline();
-	
-	// 4. The Decision (Uses standard parentheses and curly brackets)
-		if ($user_money >= $soda_price) {
-		    echo "Enjoy your drink!\n";
-		} else {
-		    echo "Inadequate funds.\n";
-		}
-		?>
-
-
-
-
-5. **Ruby (The Elegant Reader)**
-Ruby’s philosophy is to make coding beautiful and natural. Like Python, it drops semicolons and parentheses. 
-It also drops the word print or echo and just uses puts (short for "put string on the screen"). It closes its decisions 
-with a clean end statemen
-
-	**Ruby**
-	# 1. Store the price
-		soda_price = 1.50
-	
-	# 2 & 3. Ask for money and look at the answer
-		print "Enter your money: "
-		user_money = gets.to_f # "gets" catches the input, "to_f" turns it into a decimal float
-	
-	# 4. The Decision
-		if user_money >= soda_price
-		  puts "Enjoy your drink!"
-		else
-		  puts "Inadequate funds."
-		end
-
-
-
-
-## The "Plain English" Lesson for Beginners
-
-**Lesson 1: Data Types are just "Labeling the Moving Boxes"**
-Computers need to know what kind of data they are holding so they can allocate space in their memory chip. 
-In our plain English logic, we just said "Remember the price is $1.50."
-
-**Python** and **Ruby** are laid-back. They look at 1.50 and say, "Cool, that's a decimal number. 
-I'll handle it automatically behind the scenes."
-
-**Java** and ** C# *** are strict. They demand to know the exact box type upfront. We use the keyword double 
-(which stands for double-precision floating-point number) to tell the machine: "Hey, prepare for a precise decimal number."
-
-**PHP** requires a middle-ground approach. It handles the box automatically, but forces you to use a $ symbol so it 
-never mistakes a variable name for a standard text word.
-
-**Lesson 2: Input is just "Listening to the World"**
-A computer program is completely isolated until you open a window for data to flow in.
-
-	**Python** uses **input()**
-
-	**Java** uses **input.nextDouble()**
-
-	**C#** uses **Console.ReadLine()**
-
-	**PHP** uses **readline()**
-
-	**Ruby** uses **gets**
-
-Different words, same exact concept: The program pauses, opens its ears, waits for the user to hit the 'Enter' key, 
-and catches whatever they typed.
-
-## The If/Else Structure
-Look at the shape of the code across all five languages. They all follow a rigid logical fork in the road:
-
-		[ Is the money >= the price? ]
-		             /          \
-		          YES            NO
-		          /                \
-		   "Enjoy your drink!"   "Inadequate funds."
-	   
-   No matter how many curly brackets ({}), dollar signs ($), or end keywords the languages use, 
-   the machine is doing the exact same logical evaluation. ---
-
-
-
-
-
-
+	•	Lesson 1: The Trio of Responsibility — When building for the web, code stops being a single list of instructions and becomes a team. If you write code in JavaScript but forget the HTML, your logic has no buttons to click. If you write the HTML but forget JavaScript, your webpage is just a dead picture that does nothing when clicked. 
+	•	Lesson 2: Event Listeners are just "Triggers" — Web apps sit there silently idling and use an Event Listener. Think of it like a security guard sitting by a door, waiting for a specific event ("a mouse click"). The guard sleeps until the click happens, runs the logic, and then goes back to waiting. 
+	•	Lesson 3: TypeScript is just "Labeling the Buckets" — In plain JavaScript, you could accidentally type letters into the money box and crash the calculation. TypeScript forces you to declare : number so the computer stops you mid-sentence if you try to pass text where money belongs. It is a safety suit built over standard JavaScript. 
